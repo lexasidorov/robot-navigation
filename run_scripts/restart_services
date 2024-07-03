@@ -1,0 +1,11 @@
+#!/bin/bash
+
+echo "Restarting wash services..."
+cd /home/pi/robot-visual-nav
+
+git pull && sudo service wash stop && sudo service wash start
+
+while sleep 1
+do
+    curl -X GET http://localhost:4994/environment 2> /dev/null | grep environment && break
+done > /dev/null

@@ -1,0 +1,114 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<!-- Content Wrapper. Contains page content -->
+  <div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <div class="content-header">
+      <div class="container-fluid">
+        <div class="row mb-2">
+          <div class="col-sm-6">
+            <h1 class="m-0">Starter Page</h1>
+          </div><!-- /.col -->
+          <div class="col-sm-6">
+            <ol class="breadcrumb float-sm-right">
+              <li class="breadcrumb-item"><a href="#">Home</a></li>
+              <li class="breadcrumb-item active">Starter Page</li>
+            </ol>
+          </div><!-- /.col -->
+        </div><!-- /.row -->
+      </div><!-- /.container-fluid -->
+    </div>
+    <!-- /.content-header -->
+
+    <!-- Main content -->
+    <div class="content">
+      <div class="container-fluid">
+        <div class="row">
+		        {% with messages = get_flashed_messages() %}
+  		        {% if messages %}
+  		            <div class="notification is-danger">
+  		                {{ messages[0] }}
+  		                {{ messages[1] }}
+  		            </div>
+  		        {% endif %}
+		        {% endwith %}
+            <div class="col-lg-6">
+              <h3 class="title">Режим мойки</h3>
+  		        <!-- <form method="POST" action="/go_to_coords"> -->
+                <!--<div class="row">
+                  <div class="col-lg-6">
+                    <input type="number" id="button is-primary input-xxlarge" name="x" style="width:100%;">
+                  </div>
+                  <div class="col-lg-6">
+                    <input type="number" id="button is-primary input-xxlarge" name="y" style="width:100%;">
+                  </div>
+                </div>-->
+                <div class="row" style="margin-top: 10px;">
+                  <div class="col-lg-12">
+  		              <button class="action_button button is-block is-success is-large is-fullwidth" data-action-text="Запуськивание мойки" data-action-cancel-text="Остановить" name="wash">Запуськивание мойки</button>
+                  </div>
+                </div>
+  		        <!-- </form> -->
+            </div>
+
+            <div class="col-lg-6">
+              <h3 class="title">Ручное управление</h3>
+              <p></p>
+              <div class="container">
+                <div class="center" style="margin-left: 10%;">
+                  <div class="row">
+                    <div style="margin: 5px; float: left; width: 50px; height: 50px;text-align: center;margin-left: 65px;">
+                      <button type="button" id="^" class="move_button button is-block is-primary is-large is-fullwidth" name="fwd" value="0">^</button>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div style="margin: 5px; float: left; width: 50px; height: 50px;text-align: center;">
+                      <button type="button" id="<" class="move_button button is-block is-primary is-large is-fullwidth" name="lft" value="0"><</button>
+                    </div>
+                    <div style="margin: 5px; float: left; width: 50px; height: 50px;text-align: center;">
+                      <button type="button" id="v" class="move_button button is-block is-primary is-large is-fullwidth" name="bck" value="0">v</button>
+                    </div>
+                    <div style="margin: 5px; float: left; width: 50px; height: 50px;text-align: center;">
+                      <button type="button" id=">" class="move_button button is-block is-primary is-large is-fullwidth" name="rgt" value="0">></button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-12" style="margin-top: 30px;">
+              <h3 class="title">Светотехника</h3>
+              <p></p>
+              <div class="container">
+                <div class="center">
+                  <div class="row">
+                    <div style="margin: 5px; float: left; text-align: center;">
+                      <button class="action_button button is-block is-warning is-large is-fullwidth" name="fwdlights" value="0">Включить подсветку спереди</button>
+                    </div>
+                    <div style="margin: 5px; float: left; text-align: center;">
+                      <button class="action_button button is-block is-danger is-large is-fullwidth" name="backlights" value="0">Включить подсветку сзади</button>
+                    </div>
+                    <div style="margin: 5px; float: left; text-align: center;">
+                      <button class="action_button button is-block is-success is-large is-fullwidth" data-action-text="Включить всё" data-action-cancel-text="Выключить всё" name="lights" value="0">Включить всё</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        <!-- /.row -->
+      </div><!-- /.container-fluid -->
+    </div>
+    <!-- /.content -->
+  </div>
+  <!-- /.content-wrapper -->
+
+
+{% endblock %}
+
+{% block page_scripts %}
+  <script src="{{ url_for('static', filename='dist/js/api.js') }}"></script>
+{% endblock %}

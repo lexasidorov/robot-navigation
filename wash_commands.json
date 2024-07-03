@@ -1,0 +1,17 @@
+[
+	{"action":"go", "value": 2000, "slp_val": 10},
+	{"action":"left", "value": 90, "slp_val": 10},
+	{"action":"go", "value": 4000, "slp_val": 10},
+	{"action":"left", "value": 90, "slp_val": 10},
+	{"action":"go", "value": 800, "slp_val": 10},
+	{"action":"right", "value": 180, "slp_val": 10},
+	{"action":"go", "value": 1500, "slp_val": 10},
+	{"action":"left", "value": 180, "slp_val": 10},
+	{"action":"go", "value": 1500, "slp_val": 10},
+	{"action":"right", "value": 180, "slp_val": 10},
+	{"action":"go", "value": 1000, "slp_val": 10},
+	{"action":"right", "value": 90, "slp_val": 10},
+	{"action":"go", "value": 5000, "slp_val": 10},
+	{"action":"right", "value": 90, "slp_val": 10},
+	{"action":"go", "value": 1500, "slp_val": 10}
+]

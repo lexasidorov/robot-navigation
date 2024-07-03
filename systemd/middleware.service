@@ -1,0 +1,18 @@
+# /etc/systemd/system/middleware.service
+
+[Unit]
+Description=Washing robot middleware service
+After=network.target
+PartOf=wash.service
+
+[Install]
+WantedBy=multi-user.target
+
+[Service]
+Type=simple
+User=pi
+ExecStart=/home/pi/robot-visual-nav/middleware_service.sh
+WorkingDirectory=/home/pi/robot-visual-nav
+StandardOutput=syslog
+StandardError=syslog
+SyslogIdentifier=%n

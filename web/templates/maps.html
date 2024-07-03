@@ -1,0 +1,213 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<!-- Content Wrapper. Contains page content -->
+  <div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <div class="content-header">
+      <div class="container-fluid">
+        <div class="row mb-2">
+          <div class="col-sm-6">
+            <h1 class="m-0">Starter Page</h1>
+          </div><!-- /.col -->
+          <div class="col-sm-6">
+            <ol class="breadcrumb float-sm-right">
+              <li class="breadcrumb-item"><a href="#">Home</a></li>
+              <li class="breadcrumb-item active">Starter Page</li>
+            </ol>
+          </div><!-- /.col -->
+        </div><!-- /.row -->
+      </div><!-- /.container-fluid -->
+    </div>
+    <!-- /.content-header -->
+
+    <!-- Main content -->
+    <div class="content">
+      <div class="container-fluid">
+        <div class="row">
+          
+          {% if params.svg %}
+          	<div class="col-lg-8">
+          		{{ params.svg | safe }}
+          	</div>
+          {% endif %}
+          {% if params.svg %}
+          	<div class="col-lg-4">
+          {% else %}
+          	<div class="col-lg-12">
+          {% endif %}
+        	<h3 class="title">Загрузить файл карты</h3>
+		    <div class="box">
+		        {% with messages = get_flashed_messages() %}
+		        {% if messages %}
+		            <div class="notification is-danger">
+		                {{ messages[0] }}
+		                {{ messages[1] }}
+		            </div>
+		        {% endif %}
+		        {% endwith %}
+		        <form method="POST" enctype="multipart/form-data" action="/maps">
+		            <div class="field">
+		              <div class="control">
+		                <a class='button is-block is-info is-large is-fullwidth'>
+                      <input type="file" id="button is-primary upload-btn" name="svg_map" size="40">
+                    </a>
+		              </div>
+		            </div>
+                <div class="field">
+                  <div class="control">
+		                <button class="button is-block is-success is-large is-fullwidth">Загрузить</button>
+                  </div>
+                </div>
+                <div class="field">
+                  <div class="control">
+                    {% if params.svg %}
+                      <button class="button is-block is-warning is-large is-fullwidth" onclick="build_path()">Построить маршрут
+                      </button>
+                    {% else %}
+                      <button class="button is-block is-warning is-large is-fullwidth" disabled>Построить маршрут</button>
+                    {% endif %}
+                  </div>
+                </div>
+		        </form>
+		    </div>
+
+      <h3 class="title">Ручное управление</h3>
+        <p></p>
+        
+          <div class="box">
+            <div class="row">
+              <div style="margin: 5px; float: left; width: 50px; height: 50px;text-align: center;margin-left: 65px;">
+                <button type="button" id="^" class="move_button button is-block is-primary is-large is-fullwidth" name="fwd" value="0">^</button>
+              </div>
+            </div>
+            <div class="row">
+              <div style="margin: 5px; float: left; width: 50px; height: 50px;text-align: center;">
+                <button type="button" id="<" class="move_button button is-block is-primary is-large is-fullwidth" name="lft" value="0"><</button>
+              </div>
+              <div style="margin: 5px; float: left; width: 50px; height: 50px;text-align: center;">
+                <button type="button" id="v" class="move_button button is-block is-primary is-large is-fullwidth" name="bck" value="0">v</button>
+              </div>
+              <div style="margin: 5px; float: left; width: 50px; height: 50px;text-align: center;">
+                <button type="button" id=">" class="move_button button is-block is-primary is-large is-fullwidth" name="rgt" value="0">></button>
+              </div>
+            </div>
+          </div>
+          </div>
+        </div>
+        <h3 class="title">Уборка по расписанию</h3>          
+        <div class="box">
+          <a class="button is-block is-success is-large is-fullwidth" href="javascript:PopUpShow()" onclick="getCurDate()">Настроить</a>
+        </div>
+        <div class="b-popup" id="popup1">
+          <div class="b-popup-content">
+            <p align="right">
+              <a href="javascript:PopUpHide()">⮾</a>
+            </p>
+            <form method="POST" enctype="multipart/form-data" action="/maps">
+              <div class="field">
+                <div class="control">
+                  <text>Выберите дату и время уборки</text>
+                </div>
+              </div>
+              <div class="field">
+                <div class="control">
+                  <input type="datetime-local" id="date" name="date" onclick="getCurDate()">
+                </div>
+              </div>
+              <div class="field">
+                <div class="control">
+                  <text>Тип сценария </text>
+                  <select id="task" name="task"></select>
+                </div>
+              </div>
+              <div class="field">
+                <div class="control">
+                  <text>Повтор сценария </text>
+                  <select id="repeat" name="repeat scenario">
+                    <option value="never">Никогда</option>
+                    <option value="daily">Каждый день</option>
+                    <option value="weekly">Каждую неделю</option>
+                    <option value="monthly">Каждый месяц</option>
+                  </select>
+                </div>
+              </div>
+            </form>
+            <div class="field">
+              <div class="control">
+                <button type="button" class="button is-block is-success is-large is-fullwidth" onclick="crontab()">Сохранить сценарий</button>
+              </div>
+            </div>
+            <div class="field">
+              <table id="schedule-table"></table>
+            </div>
+          </div>
+        </div>
+          <!-- </div> -->
+        <!-- /.row -->
+        <div class="row">
+            <div class="col-lg-6">
+              <h3 class="title">Режим мойки</h3>
+              <!-- <form method="POST" action="/go_to_coords"> -->
+                <!--<div class="row">
+                  <div class="col-lg-6">
+                    <input type="number" id="button is-primary input-xxlarge" name="x" style="width:100%;">
+                  </div>
+                  <div class="col-lg-6">
+                    <input type="number" id="button is-primary input-xxlarge" name="y" style="width:100%;">
+                  </div>
+                </div>-->
+                <div class="row" style="margin-top: 10px;">
+                  <div style="margin: 5px; float: left; text-align: center;">
+                    <button class="action_button button is-block is-success is-large is-fullwidth" data-action-text="Запуск мойки" data-action-cancel-text="Остановить" name="wash"> ▷ Запуск мойки</button>
+
+                  </div>
+                <div style="margin: 5px; float: left; text-align: center;">
+                    <button class="action_button button is-block is-warning is-large is-fullwidth" data-action-text="Вернуться на базу" data-action-cancel-text="Остановить возвращение на базу" name="parking">Вернуться на базу</button>
+
+                  </div></div>
+              <!-- </form> -->
+            </div>
+
+            <!-- <div class="col-lg-6">
+              
+            </div> -->
+
+            <div class="col-lg-12" style="margin-top: 30px;">
+              <h3 class="title">Светотехника</h3>
+              <p></p>
+              <div class="container">
+                <div class="center">
+                  <div class="row">
+                    <div style="margin: 5px; float: left; text-align: center;">
+                      <button class="action_button button is-block is-warning is-large is-fullwidth" name="fwdlights" value="0">Включить подсветку спереди</button>
+                    </div>
+                    <div style="margin: 5px; float: left; text-align: center;">
+                      <button class="action_button button is-block is-danger is-large is-fullwidth" name="backlights" value="0">Включить подсветку сзади</button>
+                    </div>
+                    <div style="margin: 5px; float: left; text-align: center;">
+                      <button class="action_button button is-block is-success is-large is-fullwidth" data-action-text="Включить всё" data-action-cancel-text="Выключить всё" name="lights" value="0">Включить всё</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+      </div><!-- /.container-fluid -->
+    </div>
+    <!-- /.content -->
+  </div>
+  <!-- /.content-wrapper -->
+
+
+
+{% endblock %}
+
+{% block page_scripts %}
+  <!-- <script src="../static/dist/js/mapActions.js"></script> -->
+  <!-- <script src="../static/dist/js/api.js"></script> -->
+  <script src="{{ url_for('static', filename='dist/js/mapActions.js') }}"></script>
+  <script src="{{ url_for('static', filename='dist/js/api.js') }}"></script>
+{% endblock %}

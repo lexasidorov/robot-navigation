@@ -1,0 +1,4 @@
+#!/bin/bash
+
+angle=$1
+curl -X GET "http://localhost:4998/rgt/1/$angle"

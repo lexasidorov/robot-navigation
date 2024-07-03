@@ -1,0 +1,31 @@
+tail -f /var/log/syslog | grep MY_INFO
+Aug 31 16:53:00 raspberrypi drive.service[3423]: [ MY_INFO ] 838 cmd from q_wash_control: {'action': 'go', 'value': 450}
+Aug 31 16:53:00 raspberrypi drive.service[3423]: [ MY_INFO ] 838 cmd from q_wash_control: {'action': 'go', 'value': 5000}
+Aug 31 16:53:00 raspberrypi drive.service[3423]: [ MY_INFO ] 851 **** EXECUTING **** {'action': 'go', 'value': 5000}
+Aug 31 16:53:00 raspberrypi drive.service[3423]: [ MY_INFO ] 783 avoid_cnt = 0
+Aug 31 16:53:00 raspberrypi drive.service[3423]: [ MY_INFO ] 785 __control_state is now routing
+Aug 31 16:53:01 raspberrypi drive.service[3423]: [ MY_INFO ] 688 next direction: [4622.67321742501, 7070.91941377005, 17.65845240583811] | control_state = routing
+Aug 31 16:53:04 raspberrypi drive.service[3422]: [ MY_INFO ] avoiding obstacle from left. now = 1693482784.6371121 | obstime = 1693482496.5173755
+Aug 31 16:53:04 raspberrypi drive.service[3422]: [ MY_INFO ]372
+Aug 31 16:53:04 raspberrypi drive.service[3423]: [ MY_INFO ] 838 cmd from q_wash_control: {'action': 'go', 'value': 1200}
+Aug 31 16:53:04 raspberrypi drive.service[3423]: [ MY_INFO ] 838 cmd from q_wash_control: {'action': 'right', 'value': 40}
+Aug 31 16:53:04 raspberrypi drive.service[3423]: [ MY_INFO ] 377 avoid_counter = 2
+Aug 31 16:53:05 raspberrypi drive.service[3423]: [ MY_INFO ] 851 **** EXECUTING **** {'action': 'right', 'value': 40}
+Aug 31 16:53:05 raspberrypi drive.service[3423]: [ MY_INFO ] 783 avoid_cnt = 2
+Aug 31 16:53:05 raspberrypi drive.service[3423]: [ MY_INFO ] 787 __control_state is still avoiding
+Aug 31 16:53:07 raspberrypi drive.service[3423]: [ MY_INFO ] 377 avoid_counter = 1
+Aug 31 16:53:07 raspberrypi drive.service[3423]: [ MY_INFO ] 851 **** EXECUTING **** {'action': 'go', 'value': 1200}
+Aug 31 16:53:07 raspberrypi drive.service[3423]: [ MY_INFO ] 783 avoid_cnt = 1
+Aug 31 16:53:07 raspberrypi drive.service[3423]: [ MY_INFO ] 787 __control_state is still avoiding
+Aug 31 16:53:07 raspberrypi drive.service[3423]: [ MY_INFO ] 851 **** EXECUTING **** {'action': 'go', 'value': 450}
+Aug 31 16:53:07 raspberrypi drive.service[3423]: [ MY_INFO ] 783 avoid_cnt = 1
+Aug 31 16:53:07 raspberrypi drive.service[3423]: [ MY_INFO ] 787 __control_state is still avoiding
+Aug 31 16:53:09 raspberrypi drive.service[3423]: [ MY_INFO ] 377 avoid_counter = 0
+Aug 31 16:53:10 raspberrypi drive.service[3423]: [ MY_INFO ] 834 back coords: [3832.154859070039, 4554.193531271114, 60.78671847290459]
+Aug 31 16:53:10 raspberrypi drive.service[3423]: [ MY_INFO ] 699 path to direction: (467.21484108300876, -126.58609935510987, 132.63240890448293)
+Aug 31 16:53:10 raspberrypi drive.service[3423]: [ MY_INFO ] 786 going to point
+Aug 31 16:53:10 raspberrypi drive.service[3423]: [ MY_INFO ] 838 cmd from q_wash_control: {'action': 'stop', 'value': None}
+Aug 31 16:53:10 raspberrypi drive.service[3423]: [ MY_INFO ] 377 avoid_counter = 1
+Aug 31 16:53:10 raspberrypi drive.service[3423]: [ MY_INFO ] 851 **** EXECUTING **** {'action': 'stop', 'value': None}
+Aug 31 16:53:10 raspberrypi drive.service[3423]: [ MY_INFO ] 783 avoid_cnt = 1
+Aug 31 16:53:10 raspberrypi drive.service[3423]: [ MY_INFO ] 787 __control_state is still standby

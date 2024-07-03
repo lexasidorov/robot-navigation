@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg"
+     xmlns:xlink="http://www.w3.org/1999/xlink"
+     id="layer-svg" name="0" height = "600px"  width = "600px" fill="transparent" stroke="black" style="padding-top: 80px;">
+	<g meta="" style="
+    padding: 10px 10px 10px 10px;
+" id="room">
+		<path d="M10 10 h 590 v 590 h -590 Z" stroke="black" fill="grey" stroke-width="1" fill-opacity="0.1"/>
+	</g>
+	<g meta="" style="" id="charger">
+		<line x1="300" y1="40" 
+                        x2="300" y2="45" stroke="blue" fill="transparent" 
+                        style="" stroke-width="1" />
+		<line x1="300" y1="40" 
+                        x2="320" y2="40" stroke="blue" fill="transparent" 
+                        style="" stroke-width="1" />
+          <line x1="320" y1="40" 
+                        x2="320" y2="45" stroke="blue" fill="transparent" 
+                        style="" stroke-width="1" />
+
+    <!-- <line x1="59.48669168242863" y1="7.831571533203094" x2="95.20240083494822" y2="73.05137148104647" stroke="red" fill="transparent" stroke-width="1" style=""></line> -->
+	</g>
+	<g meta="" style="" id="stuck1" transform="translate(0,0)">
+		<path d="M300 300 h 30 v 30 h -30 Z" stroke="red" fill="red" stroke-width="1" fill-opacity="0.5"/>
+	</g>
+	<g meta="" style="" id="objects" transform="">
+		
+		<image pnt_num="0" cam_num="0" width="40" height="40" w_mm="740" h_mm="320" xlink:href="./static/dist/img/samples/point_0_0_740_320.jpeg" x="550.0" y="300.0"/>
+		<image pnt_num="0" cam_num="2" width="40" height="40" w_mm="1740" h_mm="1740" xlink:href="./static/dist/img/samples/point_2_0_1470_1470.jpeg" x="450.0" y="0.0"/>
+		<image pnt_num="1" cam_num="0" width="40" height="40" w_mm="420" h_mm="300" xlink:href="./static/dist/img/samples/point_0_1_1300_540.jpeg" x="495.0" y="555.0"/>
+		<image pnt_num="1" cam_num="2" width="40" height="40" w_mm="420" h_mm="300" xlink:href="./static/dist/img/samples/point_2_1_640_550.jpeg" x="540.0" y="480.0"/>
+		<image pnt_num="2" cam_num="0" width="40" height="40" w_mm="920" h_mm="1360" xlink:href="./static/dist/img/samples/point_0_2_920_1360.jpeg" x="165.0" y="480.0"/>
+		<image pnt_num="2" cam_num="2" width="40" height="40" w_mm="1810" h_mm="1730" xlink:href="./static/dist/img/samples/point_2_2_1810_1730.jpeg" x="360.0" y="570.0"/>
+		<image pnt_num="3" cam_num="2" width="40" height="40" w_mm="700" h_mm="1100" xlink:href="./static/dist/img/samples/point_2_3_700_1100.jpeg" x="0.0" y="315.0"/>
+		<image pnt_num="3" cam_num="4" width="40" height="40" w_mm="1100" h_mm="1700" xlink:href="./static/dist/img/samples/point_4_3_1100_1700.jpeg" x="300.0" y="540.0"/>
+		<image pnt_num="5" cam_num="2" width="40" height="40" w_mm="300" h_mm="310" xlink:href="./static/dist/img/samples/point_2_4_350_310.jpeg" x="225.0" y="0.0"/>
+		<image pnt_num="5" cam_num="4" width="40" height="40" w_mm="1400" h_mm="1000" xlink:href="./static/dist/img/samples/point_4_4_1400_1000.jpeg" x="0.0" y="145.0"/>
+
+
+	</g>
+	<g meta="" style="" id="robot-location" transform="translate(0,0)">
+<!--		<path id="robot" d="M290 40 h 20 v 20 h -20 Z" stroke="green" fill="green" stroke-width="1" fill-opacity="0.5"/>-->
+			<polygon points="290,40 290,55 296,55 296,60 304,60 304,55 310,55 310,40 304,40 304,45 296,45 296,40" stroke="green" fill="green" stroke-width="1" fill-opacity="0.5"> /&gt; </polygon>
+	</g>
+	<g meta=""  id="lidar-lines" transform="translate(0,0)">
+	</g>
+	<!-- This group below is necessary for path finding -->
+	<g></g>
+	<!-- <rect x="50" y="50" width="30" height="30"/> -->
+	<!-- <rect x="10" y="10" width="300" height="300"/> -->
+</svg>

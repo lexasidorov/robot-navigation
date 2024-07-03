@@ -1,0 +1,18 @@
+# /etc/systemd/system/wash.service
+
+[Unit]
+Description=Washing robot system main service
+After=visual.service drive.service front_lidar.service lidar.service lights.service sensors.service middleware.service network.target
+Requires=visual.service drive.service front_lidar.service lidar.service lights.service sensors.service middleware.service network.target
+
+[Install]
+WantedBy=multi-user.target
+
+[Service]
+Type=simple
+User=pi
+ExecStart=/home/pi/robot-visual-nav/wash_system_main_service.sh
+WorkingDirectory=/home/pi/robot-visual-nav
+StandardOutput=syslog
+StandardError=syslog
+SyslogIdentifier=%n

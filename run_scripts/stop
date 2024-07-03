@@ -1,0 +1,3 @@
+#!/bin/bash
+
+curl -X GET http://localhost:4998/fwd/0

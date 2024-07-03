@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.0//EN" "http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd">
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" id="layer-svg" name="0" height="600px" width="600px" fill="transparent" stroke="black">
+	<g meta="" style="" id="room">
+		<path d="M10 10 h 590 v 590 h -590 Z" stroke="black" fill="grey" stroke-width="1" fill-opacity="0.1"></path>
+	</g>
+	<g meta="" style="" id="charger">
+		<line x1="300" y1="40" x2="300" y2="45" stroke="blue" fill="transparent" style="" stroke-width="1"></line>
+		<line x1="300" y1="40" x2="320" y2="40" stroke="blue" fill="transparent" style="" stroke-width="1"></line>
+          <line x1="320" y1="40" x2="320" y2="45" stroke="blue" fill="transparent" style="" stroke-width="1"></line>
+
+    <!-- <line x1="59.48669168242863" y1="7.831571533203094" x2="95.20240083494822" y2="73.05137148104647" stroke="red" fill="transparent" stroke-width="1" style=""></line> -->
+	</g>
+	<g meta="" style="" id="stuck1" transform="translate(0,0)">
+		<path d="M300 300 h 30 v 30 h -30 Z" stroke="red" fill="red" stroke-width="1" fill-opacity="0.5"></path>
+	</g>
+	<g meta="" style="" id="objects" transform="">
+		
+		<image pnt_num="0" cam_num="0" width="40" height="40" w_mm="740" h_mm="320" xlink:href="./static/dist/img/samples/point_0_0_740_320.jpeg" x="550.0" y="300.0"></image>
+		<image pnt_num="0" cam_num="2" width="40" height="40" w_mm="1740" h_mm="1740" xlink:href="./static/dist/img/samples/point_2_0_1470_1470.jpeg" x="450.0" y="0.0"></image>
+		<image pnt_num="1" cam_num="0" width="40" height="40" w_mm="420" h_mm="300" xlink:href="./static/dist/img/samples/point_0_1_1300_540.jpeg" x="495.0" y="555.0"></image>
+		<image pnt_num="1" cam_num="2" width="40" height="40" w_mm="420" h_mm="300" xlink:href="./static/dist/img/samples/point_2_1_640_550.jpeg" x="540.0" y="480.0"></image>
+		<image pnt_num="2" cam_num="0" width="40" height="40" w_mm="920" h_mm="1360" xlink:href="./static/dist/img/samples/point_0_2_920_1360.jpeg" x="165.0" y="480.0"></image>
+		<image pnt_num="2" cam_num="2" width="40" height="40" w_mm="1810" h_mm="1730" xlink:href="./static/dist/img/samples/point_2_2_1810_1730.jpeg" x="360.0" y="570.0"></image>
+		<image pnt_num="3" cam_num="2" width="40" height="40" w_mm="700" h_mm="1100" xlink:href="./static/dist/img/samples/point_2_3_700_1100.jpeg" x="0.0" y="315.0"></image>
+		<image pnt_num="3" cam_num="4" width="40" height="40" w_mm="1100" h_mm="1700" xlink:href="./static/dist/img/samples/point_4_3_1100_1700.jpeg" x="300.0" y="540.0"></image>
+		<image pnt_num="5" cam_num="2" width="40" height="40" w_mm="300" h_mm="310" xlink:href="./static/dist/img/samples/point_2_4_350_310.jpeg" x="225.0" y="0.0"></image>
+		<image pnt_num="5" cam_num="4" width="40" height="40" w_mm="1400" h_mm="1000" xlink:href="./static/dist/img/samples/point_4_4_1400_1000.jpeg" x="0.0" y="145.0"></image>
+
+
+	</g>
+	<g meta="" style="" id="robot-location" transform="translate(0,0)">
+		<path id="robot" d="M300 50 h 20 v 20 h -20 Z" stroke="green" fill="green" stroke-width="1" fill-opacity="0.5"></path>
+	<line class="robotenv" x1="429.2969405749546" y1="-3.5565463594943125" x2="414.2268410910301" y2="65.03824892115269" stroke="red" fill="transparent" stroke-width="1"></line><line class="robotenv" x1="414.2268410910301" y1="65.03824892115269" x2="428.19598287430995" y2="148.36823740994666" stroke="red" fill="transparent" stroke-width="1"></line><line class="robotenv" x1="428.19598287430995" y1="148.36823740994666" x2="350.64815227351966" y2="172.2754561278688" stroke="red" fill="transparent" stroke-width="1"></line><line class="robotenv" x1="350.64815227351966" y1="172.2754561278688" x2="270.0785020109559" y2="277.2763414091788" stroke="red" fill="transparent" stroke-width="1"></line><line class="robotenv" x1="270.0785020109559" y1="277.2763414091788" x2="138.9217258842925" y2="259.92129384106084" stroke="red" fill="transparent" stroke-width="1"></line><line class="robotenv" x1="138.9217258842925" y1="259.92129384106084" x2="64.57239812781137" y2="147.51730565243403" stroke="red" fill="transparent" stroke-width="1"></line><line class="robotenv" x1="64.57239812781137" y1="147.51730565243403" x2="61.929302662613736" y2="18.657398093160175" stroke="red" fill="transparent" stroke-width="1"></line><line class="robotenv" x1="61.929302662613736" y1="18.657398093160175" x2="203.18114173420838" y2="-24.291722892651748" stroke="red" fill="transparent" stroke-width="1"></line><line class="robotenv" x1="203.18114173420838" y1="-24.291722892651748" x2="223.41547809793647" y2="-134.89139144382128" stroke="red" fill="transparent" stroke-width="1"></line><line class="robotenv" x1="223.41547809793647" y1="-134.89139144382128" x2="313.86840792338046" y2="-55.34101652096736" stroke="red" fill="transparent" stroke-width="1"></line><line class="robotenv" x1="313.86840792338046" y1="-55.34101652096736" x2="665.2568574052323" y2="-426.0120041747411" stroke="red" fill="transparent" stroke-width="1"></line><line class="robotenv" x1="665.2568574052323" y1="-426.0120041747411" x2="429.2969405749546" y2="-3.556546359494277" stroke="red" fill="transparent" stroke-width="1"></line></g>
+	<!-- This group below is necessary for path finding -->
+	<g></g>
+	<!-- <rect x="50" y="50" width="30" height="30"/> -->
+	<!-- <rect x="10" y="10" width="300" height="300"/> -->
+</svg>

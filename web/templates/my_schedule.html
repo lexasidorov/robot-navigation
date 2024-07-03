@@ -1,0 +1,92 @@
+<form method="POST" enctype="multipart/form-data" action="/maps">
+    </div>
+    <div class="field">
+      <div class="control">
+        <text>Выберите дату и время уборки</text>
+      </div>
+    </div>
+    <div class="field">
+      <div class="control">
+        <input type="datetime-local" id="date" name="date">
+      </div>
+    </div>
+    <div class="field">
+      <div class="control">
+        <text>Тип сценария </text>
+        <select id="task" name="task">
+          <option value="dry">Сухая уборка</option>
+          <option value="wet">Влажная уборка</option>
+        </select>
+      </div>
+    </div>
+    <div class="field">
+      <div class="control">
+        <text>Повтор сценария </text>
+        <select id="repeat" name="repeat scenario">
+          <option value="never">Никогда</option>
+          <option value="daily">Каждый день</option>
+          <option value="weekly">Каждую неделю</option>
+          <option value="monthly">Каждый месяц</option>
+        </select>
+      </div>
+    </div>
+      <div class="control">
+        <button class="button is-block is-success is-large is-fullwidth"
+        onclick="crontab()">Сохранить сценарий</button>
+      </div>
+    </div>
+</form>
+<script type="text/javascript">
+window.addEventListener("load", function() {
+    var now = new Date();
+    var utcString = now.toISOString().substring(0,19);
+    var year = now.getFullYear();
+    var month = now.getMonth() + 1;
+    var day = now.getDate();
+    var hour = now.getHours();
+    var minute = now.getMinutes();
+    var second = 0;
+    var localDatetime = year + "-" +
+                      (month < 10 ? "0" + month.toString() : month) + "-" +
+                      (day < 10 ? "0" + day.toString() : day) + "T" +
+                      (hour < 10 ? "0" + hour.toString() : hour) + ":" +
+                      (minute < 10 ? "0" + minute.toString() : minute) +
+                      utcString.substring(16,19);
+    var datetimeField = document.getElementById("date");
+    datetimeField.value = localDatetime;
+});
+
+function crontab() {
+  var task = $("#task").val();
+  var repeat = $("#repeat").val();
+  var datetime = new Date($("#date").val());
+  console.log(datetime);
+  let weekday = datetime.getDay();
+  console.log(weekday);
+  let day = datetime.getDate();
+  console.log(day);
+  let month = datetime.getMonth() + 1;
+  console.log(month);
+  // let year = datetime.getYear()+1900;
+  // console.log(year);
+  let hours = datetime.getHours();
+  console.log(hours);
+  let minutes = datetime.getMinutes();
+  console.log(minutes);
+
+  // Crontab func arguments are: m,h,d,mon,dow,task
+  str = ["", minutes, hours, day, month, weekday, task, repeat].join("/") 
+  console.log(str);
+  $.post(str, function(resp) {
+      console.log(resp);
+      response = resp;
+      if (response.length == 0) {
+          console.error("Can't get crontab!");
+  }
+  }).fail(function(err) {
+      console.error(err);
+  });
+
+}
+</script>
+<script src="jquery.min.js"></script>

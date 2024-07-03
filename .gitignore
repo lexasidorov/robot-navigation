@@ -1,0 +1,6 @@
+__pycache__/
+*.pyc
+.DS_Store
+instance/
+web/media/
+web/test_svgs/

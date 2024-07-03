@@ -1,0 +1,46 @@
+{
+    'test/out.2.jpeg': {
+        'mark_1': {
+            'coords': [
+                (16486.442707545644,
+                -8342.753910314053,
+                -21938.206676853846)
+            ],
+            'kp': (
+                < cv2.KeyPoint 0x7f60c8afd7a0>,
+                ...
+                < cv2.KeyPoint 0x7f60c8afd7d0>,
+            ),
+            'obj': {
+                'h': 1.5,
+                'path': 'test/mark_1.jpeg',
+                'w': 0.7,
+                'x': 4,
+                'y': 0
+            }
+        }
+    },
+}
+
+{
+    'mark_1': {
+        'source' :'test/out.2.jpeg',
+        'coords': [
+            (16486.442707545644,
+            -8342.753910314053,
+            -21938.206676853846)
+        ],
+        'kp': (
+            < cv2.KeyPoint 0x7f60c8afd7a0>,
+            ...
+            < cv2.KeyPoint 0x7f60c8afd7d0>,
+        ),
+        'obj': {
+            'h': 1.5,
+            'path': 'test/mark_1.jpeg',
+            'w': 0.7,
+            'x': 4,
+            'y': 0
+        }
+    }
+}

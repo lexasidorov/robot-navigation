@@ -1,0 +1,21 @@
+#!/bin/bash
+
+curl -X GET http://localhost:4999/lights/1
+sleep 1
+curl -X GET http://localhost:4999/left_l_off
+sleep .2
+curl -X GET http://localhost:4999/left_l_on
+sleep .2
+curl -X GET http://localhost:4999/left_l_off
+sleep .2
+curl -X GET http://localhost:4999/left_l_on
+sleep .2
+curl -X GET http://localhost:4999/right_l_off
+sleep .2
+curl -X GET http://localhost:4999/right_l_on
+sleep .2
+curl -X GET http://localhost:4999/right_l_off
+sleep .2
+curl -X GET http://localhost:4999/right_l_on
+sleep 1
+curl -X GET http://localhost:4999/lights/0

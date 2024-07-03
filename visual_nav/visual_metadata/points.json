@@ -1,0 +1,18 @@
+{
+"0": {
+        "4": {
+            "file": "/home/pi/robot-visual-nav/visual_nav/samples/point_8_1_200_250.jpeg", 
+            "h": 250,
+            "w": 200, 
+            "x": 7000,
+            "y": 1000
+        },
+        "2": {
+            "file": "/home/pi/robot-visual-nav/visual_nav/samples/point_8_0_400_300.jpeg", 
+            "h": 400,
+            "w": 300, 
+            "x": 9000,
+            "y": 2200
+        }
+    }
+}
